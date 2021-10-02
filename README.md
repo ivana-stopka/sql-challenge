@@ -1,69 +1,58 @@
 # SQL Challenge - Employee Database
 
-## Background
-It is a beautiful spring day, and it is two weeks since you have been hired as a new data engineer at Pewlett Hackard. Your first major task is a research project on employees of the corporation from the 1980s and 1990s. All that remain of the database of employees from that period are six CSV files.
+## Database Creation
 
-In this assignment, you will design the tables to hold data in the CSVs, import the CSVs into a SQL database, and answer questions about the data. In other words, you will perform:
+The following six CSV files were provided containing employee data (see data folder):
+ * departments.csv
+ * dept_emp.csv
+ * dept_manager.csv
+ * employees.csv
+ * salaries.csv
+ * titles.csv
 
-1. Data Engineering
+Upon inspection of the CSV files, the following ERD of the tables was produced using [http://www.quickdatabasediagrams.com](http://www.quickdatabasediagrams.com).
 
-3. Data Analysis
+![image](https://user-images.githubusercontent.com/86386401/135713136-8e3e4d96-32b2-400c-a27d-0f3cbc115e06.png)
 
-Note: You may hear the term "Data Modelling" in place of "Data Engineering," but they are the same terms. Data Engineering is the more modern wording instead of Data Modelling.
+Note: The above image is stored in the EmployeeSQL folder as ERD.png
 
-### Before You Begin
+From quickdatabasediagrams.com the table schema was exported to Postgresql and included the specfied data types, primary keys, foreign keys and the relationships between them (one-to-many, many-to-many etc). See QuickDBD-export.sql file in EmployeeSQL folder for the raw export file.
 
-1. Create a new repository for this project called `sql-challenge`. **Do not add this homework to an existing repository**.
+Once in postgresql (pgAdmin), the imported table schema was modified to exclude the "", CSV files imported after each table created with the foreign key contstraints/links between tables run as a last step. Each table checked for correct data and the tabel schema saved in EmployeeSQL folder as table_schemata.sql
 
-2. Clone the new repository to your computer.
+## Data Analysis
 
-3. Inside your local git repository, create a directory for the SQL challenge. Use a folder name to correspond to the challenge: **EmployeeSQL**.
-
-4. Add your files to this folder.
-
-5. Push the above changes to GitHub.
-
-## Instructions
-
-#### Data Modelling
-
-Inspect the CSVs and sketch out an ERD of the tables. Feel free to use a tool like [http://www.quickdatabasediagrams.com](http://www.quickdatabasediagrams.com).
-
-#### Data Engineering
-
-* Use the information you have to create a table schema for each of the six CSV files. Remember to specify data types, primary keys, foreign keys, and other constraints.
-
-  * For the primary keys check to see if the column is unique, otherwise create a [composite key](https://en.wikipedia.org/wiki/Compound_key). Which takes to primary keys in order to uniquely identify a row.
-  * Be sure to create tables in the correct order to handle foreign keys.
-
-* Import each CSV file into the corresponding SQL table. **Note** be sure to import the data in the same order that the tables were created and account for the headers when importing to avoid errors.
-
-#### Data Analysis
-
-Once you have a complete database, do the following:
+With the database ready, the following analysis was undertaken. Run the file queries.sql which is contained in EmployeeSQL folder. Tables with FIRST 5 results shown for each below.
 
 1. List the following details of each employee: employee number, last name, first name, sex, and salary.
 
+![image](https://user-images.githubusercontent.com/86386401/135713507-8909fc19-d929-4949-a88b-10d447fca642.png)
+
 2. List first name, last name, and hire date for employees who were hired in 1986.
+
+![image](https://user-images.githubusercontent.com/86386401/135713527-531c72fc-eff9-45ed-a048-a1144989725e.png)
 
 3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
 
+![image](https://user-images.githubusercontent.com/86386401/135713537-bec254b7-20a6-473f-850c-e4eeee739df3.png)
+
 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
+
+![image](https://user-images.githubusercontent.com/86386401/135713555-0f147e4c-7b8f-4f00-af92-fc7ec21d04cd.png)
 
 5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
 
+![image](https://user-images.githubusercontent.com/86386401/135713561-ce25ad1b-ff6c-4392-a8df-a0d99d5291c2.png)
+
 6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
+
+![image](https://user-images.githubusercontent.com/86386401/135713586-9f7a8180-77de-4b4f-8bd5-623bf44f1df1.png)
 
 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 
+![image](https://user-images.githubusercontent.com/86386401/135713598-cd1986f6-327f-4249-8e41-5f07bef6b81f.png)
+
 8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
 
-## Submission
+![image](https://user-images.githubusercontent.com/86386401/135713611-304a9cae-6edd-4fdf-9762-e72976ed875d.png)
 
-* Create an image file of your ERD.
-
-* Create a `.sql` file of your table schemata.
-
-* Create a `.sql` file of your queries.
-
-* Create and upload a repository with the above files to GitHub and post a link on BootCamp Spot.
