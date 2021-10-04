@@ -59,5 +59,7 @@ With the database ready, the following analysis was undertaken. Run the file que
 # BONUS
 
 Run Jupyter Notebook file BONUS.ipynb
+
 All steps annotated in the BONUS.ipynb file.
+
 Images of graphs stored in images flder.
