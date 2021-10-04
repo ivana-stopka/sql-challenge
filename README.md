@@ -56,3 +56,8 @@ With the database ready, the following analysis was undertaken. Run the file que
 
 ![image](https://user-images.githubusercontent.com/86386401/135713611-304a9cae-6edd-4fdf-9762-e72976ed875d.png)
 
+# BONUS
+
+Run Jupyter Notebook file BONUS.ipynb
+All steps annotated in the BONUS.ipynb file.
+Images of graphs stored in images flder.
